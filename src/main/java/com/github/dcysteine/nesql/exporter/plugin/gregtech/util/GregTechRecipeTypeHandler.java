@@ -1,5 +1,6 @@
 package com.github.dcysteine.nesql.exporter.plugin.gregtech.util;
 
+import com.github.dcysteine.nesql.exporter.main.Logger;
 import com.github.dcysteine.nesql.exporter.plugin.PluginExporter;
 import com.github.dcysteine.nesql.exporter.plugin.PluginHelper;
 import com.github.dcysteine.nesql.exporter.plugin.base.factory.ItemFactory;
@@ -8,6 +9,8 @@ import com.github.dcysteine.nesql.sql.base.item.Item;
 import com.github.dcysteine.nesql.sql.base.recipe.RecipeType;
 import com.google.common.collect.ArrayTable;
 import com.google.common.collect.Table;
+import gregtech.api.util.GT_Recipe;
+import net.minecraft.util.EnumChatFormatting;
 
 import java.util.Arrays;
 
@@ -19,9 +22,10 @@ public class GregTechRecipeTypeHandler extends PluginHelper {
 
     public GregTechRecipeTypeHandler(PluginExporter exporter) {
         super(exporter);
+
         recipeTypeTable =
                 ArrayTable.create(
-                        Arrays.asList(RecipeMap.values()), Arrays.asList(Voltage.values()));
+                        Arrays.asList(RecipeMap.values()), Arrays.asList(Voltage.values()));//This line is having issues
     }
 
     public void initialize() {

@@ -86,7 +86,7 @@ repositories {
         name = "Curse Maven"
     }
 
-    maven("https://maven.ic2.player.to") {
+    maven("https://maven2.ic2.player.to") {
         name = "IC2 Maven"
         metadataSources {
             artifact()
@@ -98,6 +98,14 @@ repositories {
     maven("https://gregtech.overminddl1.com") {
         content {
             includeGroup("thaumcraft")
+        }
+    }
+    maven("https://maven.cil.li/")
+    {
+        name = "mightypirates"
+        metadataSources {
+            mavenPom()
+            artifact()
         }
     }
 }
