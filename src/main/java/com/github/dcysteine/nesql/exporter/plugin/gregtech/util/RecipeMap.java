@@ -207,16 +207,6 @@ public enum RecipeMap {
             new Dimension(3, 1),
             new Dimension(1, 1)),
 
-    FLUID_CANNER(
-            RecipeMaps.fluidCannerRecipes,
-            "fluidcanner",
-            ItemList.Machine_HV_FluidCanner,
-            true,
-            new Dimension(1, 1),
-            new Dimension(1, 1),
-            new Dimension(1, 1),
-            new Dimension(1, 1)),
-
     BREWING(
             RecipeMaps.brewingRecipes,
             "brewing",
