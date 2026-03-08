@@ -47,6 +47,9 @@ repositories {
     maven("https://cursemaven.com") {
         name = "Curse Maven"
     }
+    maven("https://api.modrinth.com/maven") {
+        name = "Modrinth Maven"
+    }
 
     /*
      * This repo seems to be broken...
@@ -121,8 +124,8 @@ dependencies {
 
     val thaumcraftVersion: String by project
     implementation("thaumcraft:Thaumcraft:$minecraftVersion-$thaumcraftVersion:dev")
-    val thaumcraftNeiVersion: String by project
-    implementation("curse.maven:thaumcraft-nei-plugin-225095:$thaumcraftNeiVersion")
+    val aspectRecipeIndex: String by project
+    implementation("com.github.GTNewHorizons:AspectRecipeIndex:$aspectRecipeIndex:dev")
 
     val betterQuestingVersion: String by project
     implementation("com.github.GTNewHorizons:BetterQuesting:$betterQuestingVersion:dev")

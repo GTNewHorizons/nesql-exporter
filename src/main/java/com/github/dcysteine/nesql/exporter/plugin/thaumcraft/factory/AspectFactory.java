@@ -1,7 +1,7 @@
 package com.github.dcysteine.nesql.exporter.plugin.thaumcraft.factory;
 
-import com.djgiannuzz.thaumcraftneiplugin.ModItems;
-import com.djgiannuzz.thaumcraftneiplugin.items.ItemAspect;
+import com.gtnewhorizons.aspectrecipeindex.ModItems;
+import com.gtnewhorizons.aspectrecipeindex.common.items.ItemAspect;
 import com.github.dcysteine.nesql.exporter.plugin.EntityFactory;
 import com.github.dcysteine.nesql.exporter.plugin.PluginExporter;
 import com.github.dcysteine.nesql.exporter.plugin.base.factory.ItemFactory;
@@ -9,7 +9,6 @@ import com.github.dcysteine.nesql.exporter.util.IdPrefixUtil;
 import com.github.dcysteine.nesql.sql.base.item.Item;
 import com.github.dcysteine.nesql.sql.thaumcraft.Aspect;
 import net.minecraft.item.ItemStack;
-import thaumcraft.api.aspects.AspectList;
 
 import java.util.Arrays;
 
@@ -29,7 +28,7 @@ public class AspectFactory extends EntityFactory<Aspect, String> {
         }
 
         ItemStack iconItemStack = new ItemStack(ModItems.itemAspect, 1, 0);
-        ItemAspect.setAspects(iconItemStack, new AspectList().add(aspect, 2));
+        ItemAspect.setAspect(iconItemStack, aspect);
         Item icon = itemFactory.get(iconItemStack);
 
         aspectEntity =

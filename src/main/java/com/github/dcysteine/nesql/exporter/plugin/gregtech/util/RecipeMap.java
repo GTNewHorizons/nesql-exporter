@@ -3,7 +3,8 @@ package com.github.dcysteine.nesql.exporter.plugin.gregtech.util;
 import com.github.dcysteine.nesql.sql.base.recipe.Dimension;
 import gregtech.api.enums.ItemList;
 import gregtech.api.recipe.RecipeMaps;
-import gregtech.api.util.GT_LanguageManager;
+import gregtech.api.util.GTLanguageManager;
+import gtPlusPlus.api.recipe.GTPPRecipeMaps;
 
 /** Enum of supported GregTech recipe maps. */
 public enum RecipeMap {
@@ -511,16 +512,6 @@ public enum RecipeMap {
             new Dimension(2, 2),
             new Dimension(0, 0)),
 
-    SLICER(
-            RecipeMaps.slicerRecipes,
-            "slicer",
-            ItemList.Machine_HV_Slicer,
-            true,
-            new Dimension(2, 1),
-            new Dimension(0, 0),
-            new Dimension(1, 1),
-            new Dimension(0, 0)),
-
     EXTRUDER(
             RecipeMaps.extruderRecipes,
             "extruder",
@@ -562,7 +553,7 @@ public enum RecipeMap {
             new Dimension(1, 1)),
 
     MULTIBLOCK_ELECTROLYZER(
-            RecipeMaps.electrolyzerNonCellRecipes,
+            GTPPRecipeMaps.electrolyzerNonCellRecipes,
             "multiblockelectrolyzer",
             // TODO use GT++ machine icon?
             ItemList.Machine_IV_Electrolyzer,
@@ -573,7 +564,7 @@ public enum RecipeMap {
             new Dimension(3, 2)),
 
     MULTIBLOCK_CENTRIFUGE(
-            RecipeMaps.centrifugeNonCellRecipes,
+            GTPPRecipeMaps.centrifugeNonCellRecipes,
             "multiblockcentrifuge",
             // TODO use GT++ machine icon?
             ItemList.Machine_IV_Centrifuge,
@@ -584,7 +575,7 @@ public enum RecipeMap {
             new Dimension(3, 2)),
 
     MULTIBLOCK_MIXER(
-            RecipeMaps.mixerNonCellRecipes,
+            GTPPRecipeMaps.mixerNonCellRecipes,
             "multiblockmixer",
             // TODO use GT++ machine icon?
             ItemList.Machine_IV_Mixer,
@@ -633,7 +624,7 @@ public enum RecipeMap {
             Dimension itemOutputDimension, Dimension fluidOutputDimension) {
         this.recipeMap = recipeMap;
         this.shortName = shortName;
-        this.name = GT_LanguageManager.getTranslation(recipeMap.unlocalizedName);
+        this.name = GTLanguageManager.getTranslation(recipeMap.unlocalizedName);
         this.icon = icon;
         this.shapeless = shapeless;
         this.itemInputDimension = itemInputDimension;
