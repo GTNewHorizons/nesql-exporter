@@ -5,7 +5,7 @@ plugins {
     java
     id("com.github.johnrengelman.shadow") version "7.1.2"
     id("com.google.protobuf") version "0.9.4"
-    id("com.gtnewhorizons.retrofuturagradle") version "1.3.35"
+    id("com.gtnewhorizons.retrofuturagradle") version "1.4.2"
 }
 
 idea {
