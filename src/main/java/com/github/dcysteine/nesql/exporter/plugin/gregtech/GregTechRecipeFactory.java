@@ -1,5 +1,7 @@
 package com.github.dcysteine.nesql.exporter.plugin.gregtech;
 
+import static gregtech.api.recipe.RecipeEnvironment.CLEANROOM;
+import static gregtech.api.recipe.RecipeEnvironment.LOW_GRAVITY;
 import static gregtech.api.util.GTRecipeConstants.FUSION_THRESHOLD;
 
 import com.github.dcysteine.nesql.exporter.plugin.EntityFactory;
@@ -38,9 +40,9 @@ public class GregTechRecipeFactory extends EntityFactory<GregTechRecipe, String>
         String id = IdPrefixUtil.GREG_TECH_RECIPE.applyPrefix(recipe.getId());
 
         boolean requiresCleanroom =
-                gregTechRecipe.mSpecialValue == -200 || gregTechRecipe.mSpecialValue == -300;
+                gregTechRecipe.getEnvironmentRequirements().contains(CLEANROOM);
         boolean requiresLowGravity =
-                gregTechRecipe.mSpecialValue == -100 || gregTechRecipe.mSpecialValue == -300;
+                gregTechRecipe.getEnvironmentRequirements().contains(LOW_GRAVITY);
 
         List<Item> specialItemEntities =
                 specialItems.stream()
