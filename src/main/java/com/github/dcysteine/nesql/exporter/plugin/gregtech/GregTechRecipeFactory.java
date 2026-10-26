@@ -1,5 +1,7 @@
 package com.github.dcysteine.nesql.exporter.plugin.gregtech;
 
+import static gregtech.api.util.GTRecipeConstants.FUSION_THRESHOLD;
+
 import com.github.dcysteine.nesql.exporter.plugin.EntityFactory;
 import com.github.dcysteine.nesql.exporter.plugin.PluginExporter;
 import com.github.dcysteine.nesql.exporter.plugin.base.factory.ItemFactory;
@@ -46,15 +48,17 @@ public class GregTechRecipeFactory extends EntityFactory<GregTechRecipe, String>
                         .collect(Collectors.toCollection(ArrayList::new));
 
         List<String> modOwners =
-                gregTechRecipe.owners.stream()
-                        .map(ModContainer::getModId)
-                        .collect(Collectors.toCollection(ArrayList::new));
+                gregTechRecipe.owners == null
+                        ? new ArrayList<>()
+                        : gregTechRecipe.owners.stream()
+                                .map(ModContainer::getModId)
+                                .collect(Collectors.toCollection(ArrayList::new));
 
         List<String> additionalInfo = new ArrayList<>();
         switch (recipeMap) {
             case FUSION: {
                 // Special handling for fusion recipes.
-                int euToStart = gregTechRecipe.mSpecialValue;
+                long euToStart = gregTechRecipe.getMetadataOrDefault(FUSION_THRESHOLD, 0L);
 
                 int euTier;
                 if (euToStart <= 160_000_000) {

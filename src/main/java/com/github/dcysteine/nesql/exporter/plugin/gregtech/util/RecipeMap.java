@@ -4,7 +4,6 @@ import com.github.dcysteine.nesql.sql.base.recipe.Dimension;
 import gregtech.api.enums.ItemList;
 import gregtech.api.recipe.RecipeMaps;
 import gregtech.api.util.GTLanguageManager;
-import gtPlusPlus.api.recipe.GTPPRecipeMaps;
 
 /** Enum of supported GregTech recipe maps. */
 public enum RecipeMap {
@@ -88,25 +87,15 @@ public enum RecipeMap {
             new Dimension(1, 1),
             new Dimension(0, 0)),
 
-    PLASMA_ARC_FURNACE(
-            RecipeMaps.plasmaArcFurnaceRecipes,
-            "plasmaarcfurnace",
-            ItemList.Machine_HV_PlasmaArcFurnace,
-            true,
-            new Dimension(1, 1),
-            new Dimension(1, 1),
-            new Dimension(2, 2),
-            new Dimension(1, 1)),
-
     ARC_FURNACE(
             RecipeMaps.arcFurnaceRecipes,
             "arcfurnace",
             ItemList.Machine_HV_ArcFurnace,
             true,
-            new Dimension(1, 1),
-            new Dimension(1, 1),
-            new Dimension(2, 2),
-            new Dimension(0, 0)),
+            new Dimension(2, 1),
+            new Dimension(2, 1),
+            new Dimension(3, 3),
+            new Dimension(1, 1)),
 
     PRINTER(
             RecipeMaps.printerRecipes,
@@ -553,7 +542,7 @@ public enum RecipeMap {
             new Dimension(1, 1)),
 
     MULTIBLOCK_ELECTROLYZER(
-            GTPPRecipeMaps.electrolyzerNonCellRecipes,
+            RecipeMaps.electrolyzerNonCellRecipes,
             "multiblockelectrolyzer",
             // TODO use GT++ machine icon?
             ItemList.Machine_IV_Electrolyzer,
@@ -564,7 +553,7 @@ public enum RecipeMap {
             new Dimension(3, 2)),
 
     MULTIBLOCK_CENTRIFUGE(
-            GTPPRecipeMaps.centrifugeNonCellRecipes,
+            RecipeMaps.centrifugeNonCellRecipes,
             "multiblockcentrifuge",
             // TODO use GT++ machine icon?
             ItemList.Machine_IV_Centrifuge,
@@ -575,7 +564,7 @@ public enum RecipeMap {
             new Dimension(3, 2)),
 
     MULTIBLOCK_MIXER(
-            GTPPRecipeMaps.mixerNonCellRecipes,
+            RecipeMaps.mixerNonCellRecipes,
             "multiblockmixer",
             // TODO use GT++ machine icon?
             ItemList.Machine_IV_Mixer,
